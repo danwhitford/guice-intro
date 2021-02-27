@@ -5,15 +5,16 @@ import com.google.inject.Singleton;
 
 @Singleton
 public class TweetClient {
-    private TextField textField = new TextField();
 
     private final Shortener shortener;
     private final Tweeter tweeter;
+    private final TextField textField;
 
     @Inject
-    public TweetClient(Shortener shortener, Tweeter tweeter) {
+    public TweetClient(Shortener shortener, Tweeter tweeter, TextField textField) {
         this.shortener = shortener;
         this.tweeter = tweeter;
+        this.textField = textField;
     }
 
     public void postButtonClicked() {

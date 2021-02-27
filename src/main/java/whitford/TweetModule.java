@@ -9,6 +9,7 @@ public class TweetModule extends AbstractModule {
     protected void configure() {
         bind(TweetClient.class);
         bind(Tweeter.class).to(SmsTweeter.class);
+        bind(TextField.class).to(UiTextField.class);
     }
 
     @Provides
